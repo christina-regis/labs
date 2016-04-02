@@ -1,0 +1,28 @@
+.container {
+  width: 310px;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin auto for left and right centers element*/
+}
+.row {
+float: left;
+width: 100%;
+/*width relative to container*/
+}
+.col {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+.border-left {
+  border-left: 1px solid #000;
+}
+.border-right {
+  border-right: 1px solid #000;
+}
+.border-bottom {
+  border-left: 1px solid #000;
+}
+.border-top {
+  border-left: 1px solid #000;
+}

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'try_again/index'
+
+  post 'age_check' => 'age_verification#age_check'
+
   get 'age_verification' => 'age_verification#index'
 
   post 'congrats' => 'congrats#index'
@@ -7,6 +11,14 @@ Rails.application.routes.draw do
   get 'sign_up' => 'sign_up#index'
 
   get 'welcome/index'
+
+  post 'winner' => 'winner#index'
+
+  post 'try_again' => 'try_again#index'
+
+  get 'winner' => 'winner#index'
+
+  get 'try_again' => 'try_again#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

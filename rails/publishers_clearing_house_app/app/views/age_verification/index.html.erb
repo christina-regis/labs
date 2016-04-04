@@ -1,2 +1,7 @@
-<h1>how old are you?</h1>
-
+<form action="/age_check" method="post">
+<%= radio_button_tag(:over_18, "I am over 18") %>
+<%= label_tag(:over_18, "I am over 18") %>
+<%= radio_button_tag(:terms, "I have read the terms and conditions") %>
+<%= label_tag(:terms, "I have read the terms and conditions") %>
+<button>Make me a winner!</button>
+</form>

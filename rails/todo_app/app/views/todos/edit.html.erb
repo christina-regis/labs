@@ -1,0 +1,19 @@
+<h1>update a task</h1>
+
+<%= form_for @todo do |f| %>
+
+  <div>
+    <%= f.label :task %>
+    <%= f.text_field :task %>
+  </div>
+
+  <div>
+    <%= f.label :done %>
+    <%= f.check_box :done %>
+  </div>
+
+  <%= f.submit "edit task" %>
+
+<% end %>
+
+<%= link_to "Back to the list", "/todos" %>

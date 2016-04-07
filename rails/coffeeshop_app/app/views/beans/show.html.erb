@@ -1,0 +1,13 @@
+<h1><%= @bean.name %></h1>
+
+<p>
+  This cofee is a <%= @bean.roast %> roast from <%= @bean.origin %>, and we have <%= @bean.quantity %> pounds available.
+</p>
+<%= link_to 'Edit this bean!', edit_bean_path %>
+<br>
+<!-- bean_path is directed to the bean path being deleted -->
+<%= link_to 'Delete this bean!', bean_path, method: :delete, data: {confirm: 'Are you sure?'} %>
+<br>
+<%= link_to "Back to the list!", beans_path %>
+<!-- beans_path is redirecting to the home page -->
+

@@ -1,0 +1,28 @@
+<h1>Listing Students</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>House</th>
+    <th colspan="3"></th>
+  </tr>
+
+  <% @students.each do |student| %>
+  <tr>
+    <td><%= student.name %></td>
+    <td><%= student.age %></td>
+    <td><%= student.house.name %></td>
+
+    <td><a href="/students/<%= student.id %>">Details</a></td>
+    <td><a href="/students/<%= student.id %>/edit">Edit</a></td>
+    <td><%= button_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' }  %></td>
+
+  </tr>
+  <% end %>
+
+</table>
+
+<br>
+
+<a href="/students/new">New Student</a>

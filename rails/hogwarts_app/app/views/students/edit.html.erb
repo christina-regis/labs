@@ -1,0 +1,26 @@
+<h1>Editing Student</h1>
+
+<%= form_for(@student) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <select name="student[house_id]">
+      <% @houses.each do |house| %>
+      <option value="<%= house.id %>"><%= house.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<a href="/students/<%= @student.id %>">Details</a>
+<a href="/students">Back</a>

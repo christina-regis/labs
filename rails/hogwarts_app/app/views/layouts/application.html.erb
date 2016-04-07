@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HogwartsApp</title>
+  <link rel="stylesheet" href="/style.css">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <div class="logo"></div>
+    <div class="header">
+    <h1>Hogwarts School of Witchcraft &amp; Wizardry</h1>  
+      <nav class="main">
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/students">Students</a>
+          </li>
+          <li>
+            <a href="/houses">Houses</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section class="content">
+    <%= yield %>
+  </section>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<h1>Editing House</h1>
+
+<%= form_for(@house) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<a href="/houses/<%= @house.id %>">Details</a> |
+<a href="/houses">Back</a>

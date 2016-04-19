@@ -1,0 +1,19 @@
+<% if current_user %>
+<h1>Users</h1>
+<!-- calling current_user method in helper -->
+<ul>
+<% @users.each do |user| %>
+  <li><%= user.email %> - <%= user.password_digest %></li>
+<% end %>
+</ul>
+
+<form action="/logout" method="post">
+<!-- value corresponds to method, could be put or patch -->
+  <input name="_method" value="Delete" type="hidden">
+  <button>Logout</button>
+</form>
+
+<% else %>
+  <a href="/login">Login</a>
+  <a href="/signup">Sign Up</a>
+<% end %>

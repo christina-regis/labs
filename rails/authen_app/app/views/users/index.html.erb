@@ -1,0 +1,12 @@
+<h1>Users</h1>
+
+<ul>
+<% @user.each do |user| %>
+  <li><%= user.email %></li>
+<% end %>
+</ul>
+
+<form action="/logout" method="post">
+  <input name="_method" value="Delete" type="hidden">
+  <button>Logout</button>
+</form>

@@ -1,0 +1,15 @@
+<% @lovers.each do |lover| %>
+
+  <p><%= lover.name %></p>
+
+  <form method="post" action="/lovers/<%= lover.id %>">
+<!-- form hack to tell the server to do a delete -->
+  <input name="_method" value="DELETE" type="hidden">
+    <button>Delete</button>
+    </form>
+
+    <!-- this will go to /lovers/15/love_letters/new -->
+    <a href="/lovers/<%= lover.id %>/love_letters/new">New Letter</a>
+     <a href="/lovers/<%= lover.id %>/love_letters">Letters</a>
+
+<% end %>

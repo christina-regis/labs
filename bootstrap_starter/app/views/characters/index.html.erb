@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Characters</h1>
+
+<table class="table table-hover">
+	<thead>
+		<tr>
+		<th>Name</th>
+		<th>Age</th>
+		<th>Description</th>
+		<th>Active</th>
+		<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @characters.each do |character| %>
+			<tr>
+			<td><%= character.name %></td>
+			<td><%= character.age %></td>
+			<td><%= character.description %></td>
+			<td><%= character.active %></td>
+			<td><%= link_to 'Show', user_character_path(character.user, character), :class => 'btn btn-success btn-xs active' %></td>
+			<td><%= link_to 'Edit', edit_user_character_path(character.user, character), :class => 'btn btn-warning btn-xs active' %></td>
+			<td><%= link_to 'Destroy', user_character_path(character.user, character), method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-xs active' %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<br>
+
+<%#= link_to 'New Character', new_user_character_path(current_user), :class => 'btn btn-primary btn-lg active' %>

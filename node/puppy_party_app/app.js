@@ -13,10 +13,17 @@ app.use(morgan('combined'));
 
 //serve static assets- put above routes
 app.use(express.static('public'));
+//use ejs for templates
+app.set('view engine', 'ejs');
 
-router.get('/', function(req, res){
-  res.json({message: "hello from index"});
+app.get('/', function(req, res){
+  //index refers to index.ejs file
+  res.render('index', {title: 'hey', message: 'hello there'});
 });
+
+// app.get('/', function(req, res){
+//   res.json({message: "hello from index"});
+// });
 
 app.listen(port, function(req, res){
   console.log("zzz snoring puppies");

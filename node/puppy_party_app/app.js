@@ -17,8 +17,11 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
-  //index refers to index.ejs file
-  res.render('index', {title: 'hey', message: 'hello there'});
+  var greetings = ["hello", "hi", "let's party"];
+  var greeting = greetings[Math.floor((Math.random()* greetings.length))];
+  //index refers to index.ejs file, is a path when in another foler ex /public/index.ejs
+  //greeting is a variable
+  res.render('index', {title: 'hey', message: 'hello there', greeting: greeting});
 });
 
 // app.get('/', function(req, res){

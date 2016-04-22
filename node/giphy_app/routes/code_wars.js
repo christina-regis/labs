@@ -12,7 +12,7 @@ router.get('/:username', function(req, res){
   var searchString = "https://www.codewars.com/api/v1/users/" + req.params.username + "?access_key=UPmpvngF77D7wcepXRUx";
   request(searchString, function(err, response, body){
     var myResult = JSON.parse(body);
-    res.send(myResult.name + ' is a member of the ' + myResult.clan + 'clan with ' + myResult.honor + ' honor.');
+    res.send(myResult.name + ' is a member of the ' + myResult.clan + ' clan with ' + myResult.honor + ' honor.');
   });
 });
 

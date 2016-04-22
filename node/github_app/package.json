@@ -1,6 +1,7 @@
 {
-  "name": "giphy_app",
+  "name": "github_app",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.13.4",
+    "morgan": "^1.7.0",
     "request": "^2.72.0"
-  },
-  "devDependencies": {},
-  "description": ""
+  }
 }

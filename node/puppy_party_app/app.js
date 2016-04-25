@@ -28,6 +28,11 @@ app.get('/', function(req, res){
 //   res.json({message: "hello from index"});
 // });
 
+app.get('/puppies', function(req, res){
+  var puppies = ["Winston", "Lucy", "Sammy", "Spot", "Cuddles", "Bently", "Ethel"];
+  res.render('puppies/index', {puppies: puppies});
+});
+
 app.listen(port, function(req, res){
   console.log("zzz snoring puppies");
 });

@@ -1,0 +1,22 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "dotenv": "^2.0.0",
+    "ejs": "~2.3.3",
+    "express": "~4.13.1",
+    "mongoose": "^4.1.1",
+    "morgan": "~1.6.1",
+    "path": "^0.12.7",
+    "request": "^2.72.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

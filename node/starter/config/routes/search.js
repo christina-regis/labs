@@ -21,11 +21,10 @@ router.route('/connect')
 /* POST to search */
 router.route('/search')
 	.post(function(req, res) {
-		var searchApp = "https://api.foursquare.com/v2/venues/search?client_id=WA1NM12DBKJTJPK3U0ZM5KOW5VWMOMLUPQ4OFGSNRTUUST2W&client_secret=RFURHQJZFOL3MINVCY53TPQZYJZHZV4MQS52ZFDKPFU2KO4Q&ll=44.3,37.2&query=" + search[place] + "&v=20131017";
-
-		console.log(req.body);
-
-		res.send({venuesSearch: 'Not implemented!'}); // return some JSON
+    var search = req.body.search;
+    request("https://api.foursquare.com/v2/venues/search?client_id=WA1NM12DBKJTJPK3U0ZM5KOW5VWMOMLUPQ4OFGSNRTUUST2W&client_secret=RFURHQJZFOL3MINVCY53TPQZYJZHZV4MQS52ZFDKPFU2KO4Q&near=" + search.place + "&query=" + search.query + "&v=20140806&m=foursquare", function(err, req, body){
+		res.send(body); // return some JSON
+    });
 	});
 
 module.exports = router;

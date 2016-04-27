@@ -1,7 +1,7 @@
 var usersController = require('../controllers/users_controller.js');
 var express			= require('express');
 var userRoutes		= express.Router();
-
+//new and edit are not needed
 //create routes for /users
 userRoutes.route('/')
 	.get(usersController.index)

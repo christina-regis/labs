@@ -14,7 +14,7 @@ controller.index = function(req, res){
 controller.create = function(req, res){
   var link = new Link();
   link.url = req.body.url;
-  link.shortLink = shortid.generate(req.body.url);
+  //link.shortLink = shortid.generate(req.body.url);
   link.title = req.body.title;
   link.note = req.body.note;
   link.public = req.body.public;
@@ -22,7 +22,7 @@ controller.create = function(req, res){
     if (err){
       throw err;
     }
-  res.json({success: true, message: 'link created'});
+  res.json(link);
   });
 };
 

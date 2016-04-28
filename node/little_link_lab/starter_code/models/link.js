@@ -1,8 +1,9 @@
 var mongoose = require('mongoose');
+var shortid = require('shortid');
 
 var linkSchema = new mongoose.Schema({
   url       : String,
-  shortLink : String,
+  shortLink : {type: String, default: shortid.generate},
   title     : String,
   note      : String,
   public    : { type: Boolean, default: true },
@@ -10,7 +11,7 @@ var linkSchema = new mongoose.Schema({
 });
 
 linkSchema.methods.trackClick = function() {
-  // do something here
+  this.clicks++;
 };
 
 var Link = mongoose.model('Link', linkSchema);

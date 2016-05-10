@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="DemoApp">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="./app.js"></script>
+  <script src="./dreams_controller.js"></script>
+  <script src="./JournalEntryController.js"></script>
+</head>
+<body>
+<!-- create an app.js to define our applicationcalled DemoApp
+add ng-app directive
+create a dreams_controller.js
+add ng-controller directive to the html -->
+  <div ng-controller="DreamsController as dreams">
+    <input type="text" ng-model="dreams.message">
+    {{dreams.message}}
+  </div>
+  <hr>
+  <div ng-controller="JournalEntryController as journal">
+    <h1>Journal Controller</h1>
+    <form>
+      <label>Title</label>
+      <input type="text" ng-model="journal.newTitle">
+      <label>Body</label>
+      <textarea name="Body" ng-model="journal.newBody"></textarea>
+      <label>Public</label>
+      <input type="radio" ng-model="journal.isPublic" value="true">
+      <label>Private</label>
+      <input type="radio" ng-model="journal.isPublic" value="false">
+      <button ng-click="journal.add()">Add Entry</button>
+    </form>
+
+    <div ng-repeat="entry in journal.entries">
+      <p>Title: {{entry.title}}</p>
+      <p>Body: {{entry.body}}</p>
+      <p>Public: {{entry.isPublic}}</p>
+    </div>
+    <button ng-click="journal.greet()">Hi</button>
+  </div>
+</body>
+</html>

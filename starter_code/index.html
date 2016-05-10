@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app="IntroToAngularApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Intro to Angular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/homeController.js"></script>
+	</head>
+	<body>
+  <!-- HomeController since that's what we named it in the file -->
+    <div ng-controller="HomeController as homeCtrl">
+      {{homeCtrl.awesome}}
+      <h1>These are some numbers: {{homeCtrl.numbers}}</h1>
+      <h1>Dog's say {{homeCtrl.puppies}}</h1>
+      <h1>This is an object: {{homeCtrl.object}}</h1>
+    </div>
+
+	</body>
+</html>

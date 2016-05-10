@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bank of GA</title>
+</head>
+<body>
+
+  <fieldset id="fieldset">
+    <span>$</span>
+    <input type="number" name="amount" id="amount" placeholder="0.00">
+    <label for="withdraw">Withdrawl</label>
+    <input type="radio" name="action" value="withdraw" id="withdrawl">      <label for="deposit">Deposit</label>
+    <input type="radio" name="action" value="deposit" id="deposit">
+    <button>Go</button>
+  </fieldset>
+
+  <div>Current Balance: <span id="balance"></span></div>
+
+  <table id="transactions">
+    <th>
+      <tr>
+        <td>Amount</td><td>Action</td><td>Date</td>
+      </tr>
+    </th>
+    <tbody id="tb">
+    </tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

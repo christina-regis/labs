@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="jquery.js"></script>
+</head>
+<body>
+
+  <form>
+    <input type="number" name="amount" id="amount">
+    <label>Withdrawl</label>
+    <input type="radio"  name="action" value="withdrawl" checked>
+    <label>Deposit</label>
+    <input type="radio"  name="action" value="deposit">
+    <button id="go">Go</button>
+  </form>
+
+  <table id="transactions">
+    <thead>
+      <tr>
+        <td class="amount">Amount</td><td class="action">Action</td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

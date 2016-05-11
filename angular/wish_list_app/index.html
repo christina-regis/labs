@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="WishListApp">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/wish_list_controller.js"></script>
+  <style>
+    .granted {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+
+  <div ng-controller="WishListController as ctrl">
+    <form ng-submit="ctrl.add()">
+      <p>I want a <input type="text" ng-model="ctrl.wish" placeholder="thing..."/></p>
+      <p>add an image <input type="text" ng-model="ctrl.imageUrl" placeholder="image url"></p>
+      <input type="submit" id="submit" value="Submit" />
+    </form>
+    <ul class="wishes" ng-repeat="wish in ctrl.list">
+      <!-- ctrl.make(wish) -->
+      <li ng-click="ctrl.remove(wish)">{{wish.name}} <img ng-src="{{wish.imageUrl}}" /> </li>
+    </ul>
+    <div>
+      <p>Granted Wishes</p>
+      <ul class="wishes" ng-if="wish.isGranted" ng-repeat="wish in ctrl.list" ng-class="{granted: wish.isGranted}">
+        <li>{{wish.name}}</li>
+      </ul>
+    </div>
+  </div>
+
+
+</body>
+</html>

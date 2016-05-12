@@ -11,7 +11,7 @@
 // scissors-paper
 // scissors-scissors
 
-var throws = [rock, paper, scissor];
+var throws = ['rock', 'paper', 'scissor'];
 var combinations = [];
 
 var play= function(){
@@ -23,6 +23,20 @@ var play= function(){
     return combinations;
   }
 };
+
+var rockPaperScissors = function(numRounds){
+  var throws = ['rock', 'paper', 'scissors'];
+  var combinations = [];
+
+  var recurse = function(arr, val){
+    if (arr.length === numRounds){
+      combinations.push(arr);
+    }
+    for (var i = 0; i < throws.length; i++) {
+      Things[i]
+    }
+  }
+}
 
 var recurse = function(num){
   if(num > 5){

@@ -1,4 +1,4 @@
-angular.module('PokemonApp', [])
+angular.module('PokemonApp')
   .controller('PokemonController', PokemonController);
 
 PokemonController.$inject = ['PokemonFactory'];

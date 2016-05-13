@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="BankApp">
+<head>
+  <title>Bank of GA</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script src="./app.js"></script>
+  <script src="./bankController.js"></script>
+</head>
+<body ng-controller="BankController as bank">
+  <form >
+    <fieldset>
+      <span>$</span>
+      <input ng-model="bank.amount" type="number" placeholder="0.00">
+      <label>Withdrawl</label>
+      <input ng-model="bank.action" input type="radio" name="action" value="withdrawl" id="withdrawl">
+      <label>Deposit</label>
+      <input ng-model="bank.action" input type="radio" name="action" value="deposit" id="deposit">
+      <button ng-click="bank.go()" >Go</button>
+    </fieldset>
+  </form>
+
+  <div>Current Balance: {{bank.current}}</div>
+<table>
+    <th>
+      <tr>
+      <!-- click on amount, action or date to filter -->
+        <td ng-click="orderByField='bank.amount'; reverseSort = !reverseSort" >Amount</td><td ng-click="orderByField='bank.action'; reverseSort = !reverseSort">Action</td><td ng-click="orderByField='bank.date'; reverseSort = !reverseSort">Date</td>
+      </tr>
+    </th>
+    <tbody>
+    <!-- added orderBy to filter -->
+      <tr ng-repeat="line in bank.statement | orderBy:orderByField:reverseSort">
+        <td>{{line.amount}}</td>
+        <td>{{line.action}}</td>
+        <td>{{line.date | date: 'MM/dd/yyyy'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Starter App</title>
+</head>
+<body>
+  <div ng-controller="AppController as ctrl">
+    {{ ctrl.hello }}
+    {{100 | currency:"$":0}}
+    {{ctrl.date | date: 'MM/dd/yyyy'}}
+    <hr>
+    <input ng-model="searchText">
+    <ul>
+      <li ng-repeat="person in ctrl.people | filter: searchText | orderBy:expression:reverse">{{person}}</li>
+    </ul>
+    {{ctrl.name | nameco}}
+    <hr>
+    {{ctrl.false | checkmark}}
+    {{ctrl.num | price}}
+    {{ctrl.num | stock}}
+    {{ctrl.word | clean}}
+  </div>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/appController.js"></script>
+</body>
+</html>

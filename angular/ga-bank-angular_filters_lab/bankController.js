@@ -7,11 +7,19 @@ function BankController(){
   self.action = '';
   self.current = 5;
   self.date = new Date();
-  self.statement = [{amount: 5, action: 'deposit', date: 12/31/1969}];
+  self.statement = [{amount: 5, action: 'deposit', date: new Date()}];
   self.go = go;
 
   //to filter
   self.orderByField = '';
+  //add bank.orderBy(amount, date, action) into click function in html
+  // self.orderBy = function(field){
+  //   if (self.order === field){
+  //     self.order = '-' + field;
+  //   } else {
+  //     self.order = field;
+  //   }
+  // };
 
   function go(){
     console.log("go function");

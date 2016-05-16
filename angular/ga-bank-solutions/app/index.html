@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>Bank of GA</title>
+</head>
+<body ng-controller="BankController as bank">
+
+  <form>
+    <fieldset>
+      <span>$</span>
+      <input type="number" ng-model="bank.amount" name="amount" id="amount" placeholder="0.00">
+      <label for="widthraw">Withdraw</label>
+      <input type="radio" name="action" value="withdraw" ng-model="bank.action" id="withdraw">
+      <label for="deposit">Deposit</label>
+      <input type="radio" name="action" value="deposit" ng-model="bank.action" id="deposit">
+      <button ng-click="bank.go()">Go</button>
+    </fieldset>
+  </form>
+
+  <div>Current Balance: <span id="balance">{{ bank.balance | currency }}</span></div>
+
+  <table id="transactions">
+    <th>
+      <tr>
+        <td ng-click="bank.orderBy('amount')">Amount</td><td ng-click="bank.orderBy('action')">Action</td><td ng-click="bank.orderBy('date')">Date</td>
+      </tr>
+    </th>
+    <tbody>
+      <tr ng-repeat="transaction in bank.transactions | orderBy:bank.order">
+        <td>{{ transaction.amount | currency }}</td>
+        <td>{{ transaction.action }}</td>
+        <td>{{ transaction.date | date:'MM/dd/yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/bankController.js"></script>
+
+</body>
+</html>

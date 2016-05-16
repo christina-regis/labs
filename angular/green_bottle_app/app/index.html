@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="greenBottleApp">
+<head>
+  <title>Green Bottle</title>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/userController.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+  <div ng-controller="UserController as ctrl">
+  {{user.hello}}
+    <ul>
+      <li ng-repeat="user in ctrl.allUsers">{{user.firstName}} {{user.lastName}} - {{user.email}}<button ng-click="ctrl.deleteUser(user)">Delete User</button></li>
+    </ul>
+    <h3>Sign up!</h3>
+    <form>
+      <label>First Name</label>
+      <input type="text" ng-model="ctrl.newUser.firstName">
+      <br>
+      <label>Last Name</label>
+      <input type="text" ng-model="ctrl.newUser.lastName">
+      <br>
+      <label>Email</label>
+      <input type="text" ng-model="ctrl.newUser.email">
+      <br>
+      <button ng-click="ctrl.addUser()">Add User</button>
+    </form>
+  </div>
+
+</body>
+</html>
